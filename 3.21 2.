@@ -1,0 +1,212 @@
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+
+#def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+  #  print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+
+# Press the green button in the gutter to run the script.
+#if __name__ == '__main__':
+   # print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+
+import requests
+import re
+import json
+import copy
+from requests import Response
+
+
+def read_json_1dict(str_path):
+    with open(str_path,'r') as r:
+        dic=json.load(r)
+    return dic
+
+def list_delrep(list_12345_list_tuple_str_获得Q12345网址列表_有10_12个):
+    list_12345_list_tuple_str_获得Q12345网址列表_有5_6个=[]
+
+    [list_12345_list_tuple_str_获得Q12345网址列表_有5_6个.append(tuple_句_Q) for tuple_句_Q in
+     list_12345_list_tuple_str_获得Q12345网址列表_有10_12个 if
+     tuple_句_Q not in list_12345_list_tuple_str_获得Q12345网址列表_有5_6个]
+
+    return list_12345_list_tuple_str_获得Q12345网址列表_有5_6个
+
+
+
+dict_str_名称网址字典_Official_54_to_1_Set有324个={}
+
+'''
+for int_序号_网址_Official_54_53_52_51 in range(1,12):
+    str_序号_网址_Official_54_53_52_51=str(int_序号_网址_Official_54_53_52_51)
+    str_网址_Official_54_53_52_51='https://toefl.kmf.com/listen/ets/order/'+str_序号_网址_Official_54_53_52_51+'/0'
+
+    R型变量_Official_54_53_52_51=requests.get(str_网址_Official_54_53_52_51)
+
+    str_text_R型变量_Official_54_53_52_51=R型变量_Official_54_53_52_51.text
+    # 获得一堆“查看题目>>”的网址，总共20个网址
+
+
+    #  查看题目      <a  href="/detail/listen/11mc6j.html" class="practice-title js-practice-title">Official 54 Set 1</a>
+
+
+    list_str_获得名称列表_Official_54_to_51_Set有24个=re.findall('<a  href="/detail/listen/.*?" class="practice-title js-practice-title">(.*?)</a>',str_text_R型变量_Official_54_53_52_51)
+
+    list_str_获得网址列表_Official_54_to_51_Set有24个=re.findall('<a  href="(/detail/listen/.*?)" class="practice-title js-practice-title">.*?</a>',str_text_R型变量_Official_54_53_52_51)
+
+    for i in range(len(list_str_获得网址列表_Official_54_to_51_Set有24个)):
+        raw_str=list_str_获得网址列表_Official_54_to_51_Set有24个[i]
+        list_str_获得网址列表_Official_54_to_51_Set有24个[i]='https://toefl.kmf.com'+raw_str
+
+
+    a=len(list_str_获得名称列表_Official_54_to_51_Set有24个)
+    b=len(list_str_获得网址列表_Official_54_to_51_Set有24个)
+
+    dict_str_名称网址字典_Official_54_to_51_Set有24个=dict(zip(list_str_获得名称列表_Official_54_to_51_Set有24个,list_str_获得网址列表_Official_54_to_51_Set有24个))
+
+    c=len(dict_str_名称网址字典_Official_54_to_51_Set有24个)
+
+    dict_str_名称网址字典_Official_54_to_1_Set有324个.update(dict_str_名称网址字典_Official_54_to_51_Set有24个)
+
+e=len(dict_str_名称网址字典_Official_54_to_1_Set有324个)
+print(e)
+
+json_str型文件=json.dumps(dict_str_名称网址字典_Official_54_to_1_Set有324个)
+json型文件=open('C:\\Users\\Administrator\\Desktop\\jiujiujiu.json','w')
+json型文件.write(json_str型文件)
+
+'''
+"""
+dict_str_名称网址字典_Official_54_to_1_Set有324个=read_json_1dict('C:\\Users\\Administrator\\Desktop\\jiujiujiu.json')
+
+copy_dict_str_名称网址字典_Official_54_to_1_Set有324个=dict_str_名称网址字典_Official_54_to_1_Set有324个.copy()
+# 键值都是字符串，没有嵌套结构
+
+for str_名称,str_网址 in copy_dict_str_名称网址字典_Official_54_to_1_Set有324个.items():
+    R型变量_一个Set内部做题页面: Response=requests.get(str_网址)
+    str_text_R型变量_一个Set内部做题页面源代码=R型变量_一个Set内部做题页面.text
+
+    # < h1 class ="i-title js-top-title"> STORY THEATER </h1>
+    # list_str_获得网址列表_Official_54_to_51_Set有24个=re.findall('<a  href="(/detail/listen/.*?)" class="practice-title js-practice-title">.*?</a>',str_text_R型变量_Official_54_53_52_51)
+    # data-qid="75646" data-href="/detail/listen/f1mdaj.html">Q5</li>
+
+    list_0_list_str_Set大写标题_一个Set内部做题页面源代码= re.findall('<h1 class="i-title js-top-title">(.*?)</h1>',str_text_R型变量_一个Set内部做题页面源代码)
+
+    list_12345_list_tuple_str_获得Q12345网址列表_有10_12个=re.findall('data-qid=".*?" data-href="(.*?)">(.*?)</li>',str_text_R型变量_一个Set内部做题页面源代码)
+    list_12345_list_tuple_str_获得Q12345网址列表_有5_6个=list_delrep(list_12345_list_tuple_str_获得Q12345网址列表_有10_12个)
+
+    #小心zip出来的字典，恐怕只是单纯地引用原先两个列表罢了
+    copy_dict_str_名称网址字典_Official_54_to_1_Set有324个[str_名称]=list_0_list_str_Set大写标题_一个Set内部做题页面源代码
+    copy_dict_str_名称网址字典_Official_54_to_1_Set有324个[str_名称].extend(list_12345_list_tuple_str_获得Q12345网址列表_有5_6个)
+
+    print(str_名称)
+
+print(copy_dict_str_名称网址字典_Official_54_to_1_Set有324个)
+
+json_str型文件=json.dumps(copy_dict_str_名称网址字典_Official_54_to_1_Set有324个)
+json型文件=open('C:\\Users\\Administrator\\Desktop\\jiujiujiujiu.json','w')
+json型文件.write(json_str型文件)
+
+"""
+'''
+copy_dict_str_名称网址字典_Official_54_to_1_Set有324个=read_json_1dict( 'C:\\Users\\Administrator\\Desktop\\jiujiujiujiu.json')
+
+DICT__str_List___0str_12345tuple_有324个键=copy.deepcopy(copy_dict_str_名称网址字典_Official_54_to_1_Set有324个)
+
+
+for str_名称,List___0str_12345tuple in DICT__str_List___0str_12345tuple_有324个键.items():
+
+    当前str_名称对应值列表=DICT__str_List___0str_12345tuple_有324个键[str_名称]
+
+    dict__str_str__str_dict_str_str_临时缓存字典 = {}
+    dict__str_str__str_dict_str_str_临时缓存字典['Title']=当前str_名称对应值列表[0]
+
+    for 列表生效索引 in range( 1,  len(当前str_名称对应值列表)  ):
+        # 无效索引为0，值列表中指向'STORY THEATRE'，列表生效索引12345指向五个元组，元组包含网址和'Q1'。
+
+        #列表不可能达到————当前str_名称对应值列表[len(当前str_名称对应值列表)]，以len作结尾是超出的，正好的
+        #[0]对应网址，[1]对应"Qn"（n与当前列表生效索引恰好相同）
+
+        To_Qn_网址=当前str_名称对应值列表[列表生效索引][0];
+        R型变量_一个Q内部题干_选项内容=requests.get('https://toefl.kmf.com'+To_Qn_网址)
+        str_text_R型变量_一个Q内部题干_选项内容=R型变量_一个Q内部题干_选项内容.text
+
+        # <div class="question-title">
+        #                     Why does the student go to see the professor?
+
+        #<p class="question-list-detail">
+        #       <span class="question-list-number">A.</span>
+        #       To learn about the background of a director who was discussed in class
+        #   </p>
+
+        #小心问题题干的\r回车。（不是\n换行)
+        
+       # list_str_一个Q内部题干=re.findall('''<div class="question-title">
+      #              (.*)''',str_text_R型变量_一个Q内部题干_选项内容)
+        '''
+        # list_str_一个Q内部题干=['What does the woman say about an exhibition the library held last year?']
+
+
+
+    #   list_tuple_str_一个Q内部选项_选项内容=re.findall('''<p class="question-list-detail">
+    #            <span class="question-list-number">(.*?).</span>
+    #            (.*?)
+    #        </p>''',str_text_R型变量_一个Q内部题干_选项内容)
+
+
+        #[('A', 'It was in honor of the town’s seventieth anniversary.'), ('B', 'It helped increase awareness of the collection.'), ('C', 'It was arranged by students who study history.'), ('D', 'It mostly included photographs from the 1950s.')]
+
+        '''
+        dict__str_str__str_dict_str_str_临时缓存字典={ }
+         {'Question':' '
+          'A':' '
+          'B':' '
+          'C':' '
+          'D':' '}
+        """
+        dict__str_str__str_dict_str_str_临时缓存字典[ 当前str_名称对应值列表[列表生效索引][1] ]={}
+        dict__str_str__str_dict_str_str_临时缓存字典[ 当前str_名称对应值列表[列表生效索引][1] ]['Question']=list_str_一个Q内部题干[0]
+
+        for tuple_str_选项_选项内容 in list_tuple_str_一个Q内部选项_选项内容:
+            dict__str_str__str_dict_str_str_临时缓存字典[ 当前str_名称对应值列表[列表生效索引][1] ][ tuple_str_选项_选项内容[0] ]=tuple_str_选项_选项内容[1]
+
+    DICT__str_List___0str_12345tuple_有324个键[str_名称]=copy.deepcopy(dict__str_str__str_dict_str_str_临时缓存字典)
+
+    print(str_名称,DICT__str_List___0str_12345tuple_有324个键[str_名称])
+
+json_str型文件最后=json.dumps(DICT__str_List___0str_12345tuple_有324个键)
+json型文件=open('C:\\Users\\Administrator\\Desktop\\jiuiu.json','w')
+json型文件.write(json_str型文件最后)
+
+'''
+
+
+DD=read_json_1dict('C:\\Users\\Administrator\\Desktop\\jiuiu.json')
+
+
+F=open('C:\\Users\\Administrator\\Desktop\\dict.txt','w',encoding='utf-8')
+
+note='1234567890'
+for str_名称,dict__str_str__str_dict_str_str in DD.items():
+    if str_名称[0:10]!=note[0:10]:
+        F.write(str_名称[0:10]+'\n')
+    F.write(str_名称+'\n')
+
+    for K,V in dict__str_str__str_dict_str_str.items():
+        if K=='Title' : F.write(V+'\n');i=0
+
+        else :
+            for k,v in V.items():
+
+                if k=='Question':i+=1;F.write(str(i)+'. '+v+'\n')
+                else:F.write(k+'. '+v+'\n')
+
+    note=str_名称
+
+F.close()
