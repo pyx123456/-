@@ -194,8 +194,8 @@ F=open('C:\\Users\\Administrator\\Desktop\\dict.txt','w',encoding='utf-8')
 
 note='1234567890'
 for str_名称,dict__str_str__str_dict_str_str in DD.items():
-    if str_名称[0:10]!=note[0:10]:
-        F.write(str_名称[0:10]+'\n')
+    if str_名称[0:11]!=note[0:11]:
+        F.write(str_名称[0:11]+'\n')
     F.write(str_名称+'\n')
 
     for K,V in dict__str_str__str_dict_str_str.items():
